@@ -318,12 +318,6 @@
           <label class="field">Марка и модель авто
             <input type="text" name="car" required maxlength="80" placeholder="Например, BMW 5 Series">
           </label>
-          <label class="field">Студия
-            <select name="branch" required>
-              <option value="ул. Заозёрная, 72">ул. Заозёрная, 72 (Зарека)</option>
-              <option value="ул. Заозёрная, 72">ул. Заозёрная, 72 (Зарека)</option>
-            </select>
-          </label>
           <label class="field">Услуга
             <select name="service" required>
               <option value="Полировка и керамика">Полировка и керамика</option>
@@ -370,22 +364,25 @@
 
 <!-- ===== Футер ===== -->
 <footer class="footer">
-    <div class="footer-brand">
-      <a class="logo-text" href="index.html">PERFORMANTE</a>
-      <p class="footer-desc">Студия профессионального детейлинга в Тюмени. Восстановительная полировка, премиальные керамические составы Gyeon, локальная смета и гарантия.</p>
-      <small class="footer-meta">г. Тюмень, ул. Заозёрная, 72 · Ежедневно</small>
+    <div class="footer-container">
+      <div class="footer-left">
+        <a class="logo footer-logo" href="index.html" aria-label="PERFORMANTE">
+          <span class="logo-title">PERFORMANTE<span class="logo-accent">.</span></span>
+          <small>ТЮМЕНЬ · УЛ. ЗАОЗЁРНАЯ, 72</small>
+        </a>
+        <p class="footer-copy">© 2026 PERFORMANTE</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Навигация в подвале">
+        <a href="keramika.html">Полировка и керамика</a>
+        <a href="himchistka.html">Химчистка</a>
+        <a href="okleyka.html">Оклейка</a>
+        <a href="pdr-stekla.html">PDR и стёкла</a>
+        <a href="index.html#reviews">Отзывы</a>
+        <a href="kontakty.html">Контакты</a>
+      </nav>
     </div>
-    <nav aria-label="Навигация в подвале">
-      <a href="keramika.html">Полировка и керамика</a>
-      <a href="himchistka.html">Химчистка</a>
-      <a href="okleyka.html">Оклейка</a>
-      <a href="pdr-stekla.html">PDR и стёкла</a>
-      <a href="index.html#reviews">Отзывы</a>
-      <a href="kontakty.html">Контакты</a>
-    </nav>
-    <p class="foot-copy">© <span id="year">2026</span> PERFORMANTE</p>
-  </div>
-</footer>
+  </footer>
 
 <!-- ===== Липкая мобильная панель ===== -->
 <div class="mbar" role="region" aria-label="Быстрая связь">
@@ -482,7 +479,6 @@
       var name = form.elements.name.value.trim();
       var phone = form.elements.phone.value.trim();
       var car = form.elements.car.value.trim();
-      var branch = form.elements.branch.value;
       var service = form.elements.service.value;
       form.classList.add('was-validated');
       if (name.length < 2 || phone.replace(/\D/g, '').length < 10 || car.length < 2 || service === '') {
@@ -501,7 +497,6 @@
           name: name,
           phone: phone,
           car: car,
-          branch: branch,
           service: service,
           page: form.elements.page ? form.elements.page.value : ''
         })

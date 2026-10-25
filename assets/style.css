@@ -247,12 +247,83 @@ p{margin:0}
 .map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%)}
 
 /* ===== Футер ===== */
-.footer{border-top:1px solid var(--line);padding:48px 0 40px}
-.footer .wrap{display:flex;flex-wrap:wrap;gap:24px 48px;align-items:flex-start;justify-content:space-between}
-.footer nav{display:flex;flex-wrap:wrap;gap:12px 28px}
-.footer nav a{color:var(--muted);font-size:15px}
-.footer nav a:hover{color:var(--text)}
-.footer .mono,.footer .foot-copy{color:var(--muted);font-size:13px}
+.footer {
+  background: #0B0C0E;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 48px 0;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-decoration: none;
+}
+
+.footer-logo .logo-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.06em;
+  color: #FFFFFF;
+}
+
+.footer-logo .logo-accent { color: var(--accent, #C5A880); }
+
+.footer-logo small {
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--muted, #8E95A2);
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.footer-copy {
+  font-size: 12px;
+  color: var(--muted, #8E95A2);
+  margin: 0;
+}
+
+.footer-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.footer-nav a {
+  font-size: 13px;
+  color: #D1D5DB;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-nav a:hover { color: var(--accent, #C5A880); }
+
+/* Плавающая кнопка связи */
+.floating-btn, .whatsapp-float, .tg-float {
+  background: var(--accent, #C5A880) !important;
+}
+
+@media (max-width: 768px) {
+  .footer-container { flex-direction: column; gap: 32px; }
+  .footer-nav { flex-direction: column; align-items: flex-start; gap: 14px; }
+}
 
 /* ===== Липкая мобильная панель ===== */
 .mbar{display:none}
